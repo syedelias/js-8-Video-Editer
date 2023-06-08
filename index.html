@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="video-editor" />
+    <title>video-editor</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    video {
+      object-fit: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(36, 35, 35, 0.472);
+      z-index: -1;
+    }
+    .content {
+      text-align: center;
+      font-size: 20px;
+      color: red;
+      position: relative;
+      top: 180px;
+      left: 420px;
+      height: 70%;
+      width: 40%;
+    }
+    .image {
+      background: none;
+      height: 170px;
+      width: 250px;
+    }
+    .switch-btn {
+      position: absolute;
+      top: 500px;
+      left: 50px;
+      font-size: 40px;
+      padding: 10px 30px;
+    }
+    button {
+      padding: 5px 20px;
+      font-size: 15px;
+    }
+    button:hover {
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+  <body>
+    <div class="header">
+      <video class="video-bar" autoplay muted loop>
+        <source
+          src="./vecteezy_30-second-animation-from-30-to-0-seconds-modern-flat-design_10366175_895.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="content">
+        <h1>video Edits project</h1>
+        <img class="image" src="./img2.jpg" alt="pic" />
+      </div>
+    </div>
+    <div class="switch-btn">
+      <button class="play">play</button>
+      <button class="pause">pause</button>
+    </div>
+    <script>
+      let play = document.querySelector(".play");
+      let pause = document.querySelector(".pause");
+      let video = document.querySelector(".video-bar");
+      play.addEventListener("click", () => {
+        video.play();
+      });
+      pause.addEventListener("click", () => {
+        video.pause();
+      });
+    </script>
+  </body>
+</html>
